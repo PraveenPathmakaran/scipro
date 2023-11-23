@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -7,7 +8,9 @@ import 'package:scipro/infrastructure/auth/auth_repository.dart';
 
 final getIt = GetIt.instance;
 
-Future<void> init() async {}
+Future<void> initGetIt() async {
+  authenticationInit();
+}
 
 void authenticationInit() {
   //bloc
@@ -23,4 +26,6 @@ void authenticationInit() {
 
   getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   getIt.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn());
+  getIt.registerLazySingleton<FirebaseFirestore>(
+      () => FirebaseFirestore.instance);
 }

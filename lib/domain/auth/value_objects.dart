@@ -14,6 +14,17 @@ class EmailAddress extends ValueObject<String> {
   EmailAddress._(this.value);
 }
 
+class Password extends ValueObject<String> {
+  @override
+  Either<ValueFailure<String>, String> value;
+
+  factory Password(String input) {
+    return Password._(validateEmailAddress(input));
+  }
+
+  Password._(this.value);
+}
+
 class UserName extends ValueObject<String> {
   @override
   Either<ValueFailure<String>, String> value;
@@ -57,7 +68,6 @@ class PinCode extends ValueObject<String> {
 
   PinCode._(this.value);
 }
-
 
 class DateValue extends ValueObject<String> {
   @override

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:scipro/injection_container.dart';
 
-void main() {
+void main() async {
+  initGetIt();
   runApp(const MyApp());
 }
 

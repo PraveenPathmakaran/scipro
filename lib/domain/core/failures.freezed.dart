@@ -26,6 +26,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +38,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +50,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +63,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +75,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +87,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -199,6 +205,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return empty(failedValue);
   }
@@ -213,6 +220,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return empty?.call(failedValue);
   }
@@ -227,6 +235,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -245,6 +254,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return empty(this);
   }
@@ -259,6 +269,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return empty?.call(this);
   }
@@ -273,6 +284,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -369,6 +381,7 @@ class _$InvalidUserNameImpl<T> implements InvalidUserName<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidUserName(failedValue);
   }
@@ -383,6 +396,7 @@ class _$InvalidUserNameImpl<T> implements InvalidUserName<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return invalidUserName?.call(failedValue);
   }
@@ -397,6 +411,7 @@ class _$InvalidUserNameImpl<T> implements InvalidUserName<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidUserName != null) {
@@ -415,6 +430,7 @@ class _$InvalidUserNameImpl<T> implements InvalidUserName<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidUserName(this);
   }
@@ -429,6 +445,7 @@ class _$InvalidUserNameImpl<T> implements InvalidUserName<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidUserName?.call(this);
   }
@@ -443,6 +460,7 @@ class _$InvalidUserNameImpl<T> implements InvalidUserName<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidUserName != null) {
@@ -540,6 +558,7 @@ class _$InvalidAddressImpl<T> implements InvalidAddress<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidAddress(failedValue);
   }
@@ -554,6 +573,7 @@ class _$InvalidAddressImpl<T> implements InvalidAddress<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return invalidAddress?.call(failedValue);
   }
@@ -568,6 +588,7 @@ class _$InvalidAddressImpl<T> implements InvalidAddress<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidAddress != null) {
@@ -586,6 +607,7 @@ class _$InvalidAddressImpl<T> implements InvalidAddress<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidAddress(this);
   }
@@ -600,6 +622,7 @@ class _$InvalidAddressImpl<T> implements InvalidAddress<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidAddress?.call(this);
   }
@@ -614,6 +637,7 @@ class _$InvalidAddressImpl<T> implements InvalidAddress<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidAddress != null) {
@@ -711,6 +735,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidEmail(failedValue);
   }
@@ -725,6 +750,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -739,6 +765,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -757,6 +784,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidEmail(this);
   }
@@ -771,6 +799,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidEmail?.call(this);
   }
@@ -785,6 +814,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -882,6 +912,7 @@ class _$InvalidPhoneNumberImpl<T> implements InvalidPhoneNumber<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidPhoneNumber(failedValue);
   }
@@ -896,6 +927,7 @@ class _$InvalidPhoneNumberImpl<T> implements InvalidPhoneNumber<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return invalidPhoneNumber?.call(failedValue);
   }
@@ -910,6 +942,7 @@ class _$InvalidPhoneNumberImpl<T> implements InvalidPhoneNumber<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidPhoneNumber != null) {
@@ -928,6 +961,7 @@ class _$InvalidPhoneNumberImpl<T> implements InvalidPhoneNumber<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidPhoneNumber(this);
   }
@@ -942,6 +976,7 @@ class _$InvalidPhoneNumberImpl<T> implements InvalidPhoneNumber<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidPhoneNumber?.call(this);
   }
@@ -956,6 +991,7 @@ class _$InvalidPhoneNumberImpl<T> implements InvalidPhoneNumber<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidPhoneNumber != null) {
@@ -1053,6 +1089,7 @@ class _$InvalidPincodeImpl<T> implements InvalidPincode<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidPincode(failedValue);
   }
@@ -1067,6 +1104,7 @@ class _$InvalidPincodeImpl<T> implements InvalidPincode<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return invalidPincode?.call(failedValue);
   }
@@ -1081,6 +1119,7 @@ class _$InvalidPincodeImpl<T> implements InvalidPincode<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidPincode != null) {
@@ -1099,6 +1138,7 @@ class _$InvalidPincodeImpl<T> implements InvalidPincode<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidPincode(this);
   }
@@ -1113,6 +1153,7 @@ class _$InvalidPincodeImpl<T> implements InvalidPincode<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidPincode?.call(this);
   }
@@ -1127,6 +1168,7 @@ class _$InvalidPincodeImpl<T> implements InvalidPincode<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidPincode != null) {
@@ -1224,6 +1266,7 @@ class _$InvalidDateImpl<T> implements InvalidDate<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
     required TResult Function(T failedValue) invalidPincode,
     required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidDate(failedValue);
   }
@@ -1238,6 +1281,7 @@ class _$InvalidDateImpl<T> implements InvalidDate<T> {
     TResult? Function(T failedValue)? invalidPhoneNumber,
     TResult? Function(T failedValue)? invalidPincode,
     TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
   }) {
     return invalidDate?.call(failedValue);
   }
@@ -1252,6 +1296,7 @@ class _$InvalidDateImpl<T> implements InvalidDate<T> {
     TResult Function(T failedValue)? invalidPhoneNumber,
     TResult Function(T failedValue)? invalidPincode,
     TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidDate != null) {
@@ -1270,6 +1315,7 @@ class _$InvalidDateImpl<T> implements InvalidDate<T> {
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
     required TResult Function(InvalidPincode<T> value) invalidPincode,
     required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
   }) {
     return invalidDate(this);
   }
@@ -1284,6 +1330,7 @@ class _$InvalidDateImpl<T> implements InvalidDate<T> {
     TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult? Function(InvalidPincode<T> value)? invalidPincode,
     TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
   }) {
     return invalidDate?.call(this);
   }
@@ -1298,6 +1345,7 @@ class _$InvalidDateImpl<T> implements InvalidDate<T> {
     TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
     TResult Function(InvalidPincode<T> value)? invalidPincode,
     TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidDate != null) {
@@ -1316,5 +1364,182 @@ abstract class InvalidDate<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$InvalidDateImplCopyWith<T, _$InvalidDateImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ShortPasswordImplCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$ShortPasswordImplCopyWith(_$ShortPasswordImpl<T> value,
+          $Res Function(_$ShortPasswordImpl<T>) then) =
+      __$$ShortPasswordImplCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$ShortPasswordImplCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ShortPasswordImpl<T>>
+    implements _$$ShortPasswordImplCopyWith<T, $Res> {
+  __$$ShortPasswordImplCopyWithImpl(_$ShortPasswordImpl<T> _value,
+      $Res Function(_$ShortPasswordImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$ShortPasswordImpl<T>(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShortPasswordImpl<T> implements ShortPassword<T> {
+  const _$ShortPasswordImpl({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.shortPassword(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShortPasswordImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShortPasswordImplCopyWith<T, _$ShortPasswordImpl<T>> get copyWith =>
+      __$$ShortPasswordImplCopyWithImpl<T, _$ShortPasswordImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidUserName,
+    required TResult Function(T failedValue) invalidAddress,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) invalidPhoneNumber,
+    required TResult Function(T failedValue) invalidPincode,
+    required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) shortPassword,
+  }) {
+    return shortPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue)? empty,
+    TResult? Function(T failedValue)? invalidUserName,
+    TResult? Function(T failedValue)? invalidAddress,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? invalidPincode,
+    TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? shortPassword,
+  }) {
+    return shortPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidUserName,
+    TResult Function(T failedValue)? invalidAddress,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+    TResult Function(T failedValue)? invalidPincode,
+    TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? shortPassword,
+    required TResult orElse(),
+  }) {
+    if (shortPassword != null) {
+      return shortPassword(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidUserName<T> value) invalidUserName,
+    required TResult Function(InvalidAddress<T> value) invalidAddress,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(InvalidPincode<T> value) invalidPincode,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+  }) {
+    return shortPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Empty<T> value)? empty,
+    TResult? Function(InvalidUserName<T> value)? invalidUserName,
+    TResult? Function(InvalidAddress<T> value)? invalidAddress,
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult? Function(InvalidPincode<T> value)? invalidPincode,
+    TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
+  }) {
+    return shortPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidUserName<T> value)? invalidUserName,
+    TResult Function(InvalidAddress<T> value)? invalidAddress,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(InvalidPincode<T> value)? invalidPincode,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    required TResult orElse(),
+  }) {
+    if (shortPassword != null) {
+      return shortPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShortPassword<T> implements ValueFailure<T> {
+  const factory ShortPassword({required final T failedValue}) =
+      _$ShortPasswordImpl<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$ShortPasswordImplCopyWith<T, _$ShortPasswordImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
