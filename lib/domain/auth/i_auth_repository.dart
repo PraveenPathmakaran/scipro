@@ -14,5 +14,5 @@ abstract class IAuthRepository {
   });
 
   Future<void> signOut();
-  Future<Option<AdminData>> getSignedInUser();
+  Option<AdminData> getSignedInUser();
 }

@@ -6,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:scipro/domain/auth/admin_data.dart';
 import 'package:scipro/domain/auth/auth_failure.dart';
 import 'package:scipro/domain/auth/value_objects.dart';
+import 'package:scipro/infrastructure/auth/firebase_user_mapper.dart';
 
 import '../../domain/auth/i_auth_repository.dart';
 
@@ -76,8 +77,8 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Option<AdminData>> getSignedInUser() {
-    throw UnimplementedError();
+  Option<AdminData> getSignedInUser() {
+    return optionOf(_firebaseAuth.currentUser?.toDomain());
   }
 
   @override
