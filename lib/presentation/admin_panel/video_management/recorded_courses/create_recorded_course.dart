@@ -8,7 +8,7 @@ import 'package:scipro/presentation/widgets/responsive/responsive.dart';
 import '../../../widgets/textform feild Widget/textformfeildWidget.dart';
 
 class CreateRecordedCourses extends StatelessWidget {
-   CreateRecordedCourses({super.key, Key});
+  CreateRecordedCourses({super.key, Key});
 
   var selectstate;
 
@@ -20,51 +20,49 @@ class CreateRecordedCourses extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-               Padding(
-                  padding: const EdgeInsets.only(top: 10,left: 10),
-                  child: GestureDetector(
-                    onTap: (){showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title:  const GooglePoppinsWidgets(text: 'Category', fontsize: 18,),
-          content: const TextField(
-            decoration: InputDecoration(hintText: "Enter the Category"),
-          ),
-          actions: <Widget>[
-           
-            ButtonWidget(text: "Create")
-          ],
-        );
-      },
-    );} ,
-                    child: ButtonWidget(
-                      text: 'Category',
-                    ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10, left: 10),
+                child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const GooglePoppinsWidgets(
+                            text: 'Category',
+                            fontsize: 18,
+                          ),
+                          content: const TextField(
+                            decoration:
+                                InputDecoration(hintText: "Enter the Category"),
+                          ),
+                          actions: <Widget>[ButtonWidget(text: "Create")],
+                        );
+                      },
+                    );
+                  },
+                  child: ButtonWidget(
+                    text: 'Category',
                   ),
                 ),
+              ),
               GestureDetector(
                 onTap: () {
                   CreateRecordedCoursesDialog(context);
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 10,right: 10),
+                  padding: const EdgeInsets.only(top: 10, right: 10),
                   child: ButtonWidget(
                     text: 'Create Rec Courses',
                   ),
                 ),
-                
               ),
-             
             ],
           ),
         ],
       ),
     );
   }
-
-   
-  
 
   void CreateRecordedCoursesDialog(BuildContext context) {
     showDialog(
@@ -92,18 +90,16 @@ class CreateRecordedCourses extends StatelessWidget {
           ),
           content: ResponsiveWebSite.isMobile(context)
               ? SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      recCousesWidget[0],
-                      recCousesWidget[1],
-                      recCousesWidget[2],
-                      recCousesWidget[3],
-                      recCousesWidget[4],
-                      recCousesWidget[5],
-                      recCousesWidget[6],
-                      recCousesWidget[7],
-                    ]
-                  ),
+                  child: Column(children: [
+                    recCousesWidget[0],
+                    recCousesWidget[1],
+                    recCousesWidget[2],
+                    recCousesWidget[3],
+                    recCousesWidget[4],
+                    recCousesWidget[5],
+                    recCousesWidget[6],
+                    recCousesWidget[7],
+                  ]),
                 )
               : Row(
                   children: [
@@ -116,12 +112,9 @@ class CreateRecordedCourses extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Expanded(
-                                    child: recCousesWidget[0]),
-                                Expanded(
-                                    child: recCousesWidget[1]),
-                                Expanded(
-                                    child: recCousesWidget[2]),
+                                Expanded(child: recCousesWidget[0]),
+                                Expanded(child: recCousesWidget[1]),
+                                Expanded(child: recCousesWidget[2]),
                               ],
                             ),
                           ),
@@ -130,12 +123,9 @@ class CreateRecordedCourses extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Expanded(
-                                    child:recCousesWidget[3]),
-                                Expanded(
-                                    child: recCousesWidget[4]),
-                                Expanded(
-                                    child:recCousesWidget[5]),
+                                Expanded(child: recCousesWidget[3]),
+                                Expanded(child: recCousesWidget[4]),
+                                Expanded(child: recCousesWidget[5]),
                               ],
                             ),
                           ),
@@ -146,7 +136,6 @@ class CreateRecordedCourses extends StatelessWidget {
                               children: [
                                 recCousesWidget[6],
                                 recCousesWidget[7]
-                              
                               ],
                             ),
                           ),
@@ -160,7 +149,6 @@ class CreateRecordedCourses extends StatelessWidget {
       },
     );
   }
-  
 }
 
 class ButtonWidget extends StatelessWidget {
@@ -178,7 +166,7 @@ class ButtonWidget extends StatelessWidget {
       height: 40,
       child: Center(
         child: GooglePoppinsWidgets(
-          textAlign:TextAlign.center,
+          textAlign: TextAlign.center,
           color: ColorManager.cwhite,
           fontWeight: FontWeight.bold,
           text: text,
@@ -188,98 +176,76 @@ class ButtonWidget extends StatelessWidget {
     );
   }
 }
-List<Widget> recCousesWidget= [
-  Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Create Course",
-                                      title: "Create Couse",
-                                      width: 200),
-                                ),////////////////////1
-                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Facultie",
-                                      title: "Facultie",
-                                      width: 200),
-                                ),/////////////////2
-                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Course Fee",
-                                      title: "Course Fee",
-                                      width: 200),
-                                ),////////////3
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Duration",
-                                      title: "Duration",
-                                      width: 200),
-                                ),//////////////4
-                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Course ID",
-                                      title: "Course ID",
-                                      width: 200),
-                                ), /////////////5
-                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Posted Date",
-                                      title: "Posted Date",
-                                      width: 200),
-                                ),/////////////////////6
-                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Posted Time",
-                                      title: "Posted Time",
-                                      width: 200),
-                                ),/////////////7
-                                  Padding(
-                                 padding: const EdgeInsets.only(top: 10,),
-                                 child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 10),
-                                      child: GooglePoppinsWidgets(text: 'Category', fontsize: 12),
-                                    ),
-                                     Padding(
-                                       padding: const EdgeInsets.only(top: 7,left: 10),
-                                       child: SizedBox(
-                                        
-                                        height: 35,
-                                        width: 200,
-                                        child: Center(
-                                          child: DropdownSearch(
-                                            autoValidateMode: AutovalidateMode.always,
-                                            // onChanged: (value) {
-                                            //   selectstate = value ?? '';
-                                            //   log("$selectstate-------");
-                                            // },
-                                            dropdownDecoratorProps:
-                                                DropDownDecoratorProps(
-                                                    baseStyle: GoogleFonts.poppins(
-                                                        fontSize: 13,
-                                                        color: Colors.black
-                                                            .withOpacity(0.7))),
-                                            selectedItem: 'Category',
-                                            //items: listofState,
-                                          ),
-                                        )),
-                                     ),
-                                   ],
-                                 ),
-                               ),/////////8
 
-  
+List<Widget> recCousesWidget = [
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Create Course", title: "Create Couse", width: 200),
+  ), ////////////////////1
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Facultie", title: "Facultie", width: 200),
+  ), /////////////////2
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Course Fee", title: "Course Fee", width: 200),
+  ), ////////////3
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Duration", title: "Duration", width: 200),
+  ), //////////////4
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Course ID", title: "Course ID", width: 200),
+  ), /////////////5
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Posted Date", title: "Posted Date", width: 200),
+  ), /////////////////////6
+  Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: TextFormFiledContainerWidget(
+        hintText: "Posted Time", title: "Posted Time", width: 200),
+  ), /////////////7
+  Padding(
+    padding: const EdgeInsets.only(
+      top: 10,
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 10),
+          child: GooglePoppinsWidgets(text: 'Category', fontsize: 12),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 7, left: 10),
+          child: SizedBox(
+              height: 35,
+              width: 200,
+              child: Center(
+                child: DropdownSearch(
+                  autoValidateMode: AutovalidateMode.always,
+                  // onChanged: (value) {
+                  //   selectstate = value ?? '';
+                  //   log("$selectstate-------");
+                  // },
+                  dropdownDecoratorProps: DropDownDecoratorProps(
+                      baseStyle: GoogleFonts.poppins(
+                          fontSize: 13, color: Colors.black.withOpacity(0.7))),
+                  selectedItem: 'Category',
+                  //items: listofState,
+                ),
+              )),
+        ),
+      ],
+    ),
+  ), /////////8
 ];
