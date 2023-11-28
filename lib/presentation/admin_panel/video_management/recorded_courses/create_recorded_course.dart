@@ -1,13 +1,23 @@
+import 'dart:developer';
+
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
 import 'package:scipro/presentation/widgets/google_fonts/google_popins.dart';
 import 'package:scipro/presentation/widgets/responsive/responsive.dart';
 
-import '../../../widgets/textformfeildWidget.dart';
+import '../../../widgets/textform feild Widget/textformfeildWidget.dart';
 
-class CreateRecordedCourses extends StatelessWidget {
+class CreateRecordedCourses extends StatefulWidget {
   const CreateRecordedCourses({super.key, Key});
 
+  @override
+  State<CreateRecordedCourses> createState() => _CreateRecordedCoursesState();
+}
+
+class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
+  var selectstate;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -121,7 +131,26 @@ class CreateRecordedCourses extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 recCousesWidget[6],
-                               recCousesWidget[7]
+                               SizedBox(
+                                height: 35,
+                                width: 300,
+                                child: Center(
+                                  child: DropdownSearch(
+                                    autoValidateMode: AutovalidateMode.always,
+                                    onChanged: (value) {
+                                      selectstate = value ?? '';
+                                      log("$selectstate-------");
+                                    },
+                                    dropdownDecoratorProps:
+                                        DropDownDecoratorProps(
+                                            baseStyle: GoogleFonts.poppins(
+                                                fontSize: 13,
+                                                color: Colors.black
+                                                    .withOpacity(0.7))),
+                                    selectedItem: 'All States',
+                                    //items: listofState,
+                                  ),
+                                )),
                               ],
                             ),
                           ),

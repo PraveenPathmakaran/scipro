@@ -45,6 +45,7 @@ dependencies:
   rxdart: ^0.27.7
   uuid: ^4.2.1
   sidebar_drawer:
+  dropdown_search: ^5.0.6
   
 dev_dependencies:
   build_runner: ^2.4.6
