@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:scipro/presentation/admin_panel/video_management/video_listing/view_courses/view_courses.dart';
 import 'package:scipro/presentation/widgets/responsive/responsive.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
-class VideoListingGrid extends StatefulWidget {
+class VideoCourseGrid extends StatefulWidget {
   /// Creates the home page.
-  const VideoListingGrid({Key? key}) : super(key: key);
+  const VideoCourseGrid({Key? key}) : super(key: key);
 
   @override
-  VideoListingGridState createState() =>
-      VideoListingGridState();
+  VideoCourseGridState createState() =>
+      VideoCourseGridState();
 }
 
-class VideoListingGridState extends State<VideoListingGrid> {
+class VideoCourseGridState extends State<VideoCourseGrid> {
   final DataGridController _gridController = DataGridController();
   List<Video> videos = <Video>[];
   late VideoDataSource videoDataSource;
@@ -20,13 +19,12 @@ class VideoListingGridState extends State<VideoListingGrid> {
   @override
   void initState() {
     super.initState();
-   
+    videos = getVideoData();
     videoDataSource = VideoDataSource(videoData: videos);
   }
 
   @override
   Widget build(BuildContext context) {
-     videos = getVideoData(context);
     return       SfDataGrid(
             controller: _gridController,
             defaultColumnWidth: ResponsiveWebSite.isDesktop(context)? 257: 150,
@@ -46,23 +44,23 @@ class VideoListingGridState extends State<VideoListingGrid> {
                         overflow: TextOverflow.ellipsis,
                       ))),
               GridColumn(
-                  columnName: 'categoryname',
+                  columnName: 'courses',
                   label: Container(
                       color: Colors.blue[100],
                       padding: const EdgeInsets.all(8.0),
                       alignment: Alignment.center,
                       child: const Text(
-                        'CATEGORY NAME',
+                        'Courses',
                         overflow: TextOverflow.ellipsis,
                       ))),
               GridColumn(
-                  columnName: 'noofcourse',
+                  columnName: 'noofvideos',
                   label: Container(
                       color: Colors.blue[100],
                       padding: const EdgeInsets.all(8.0),
                       alignment: Alignment.center,
                       child: const Text(
-                        'N0. OF COURSE',
+                        'No. of videos',
                         overflow: TextOverflow.ellipsis,
                       ))),
               
@@ -80,13 +78,13 @@ class VideoListingGridState extends State<VideoListingGrid> {
           );
   }
 
-  List<Video> getVideoData(BuildContext context) {
+  List<Video> getVideoData() {
     return [
-      Video(context, 01, 'Science', 9, 2),
-      Video( context, 02, 'GK', 3,  30),
-      Video(context, 03, 'Social Science', 7,  15),
-      Video(context, 04, 'Maths', 8,  15),
-      Video(context, 05, 'English', 3, 1),
+      Video(01, 'Science', 9, 2),
+      Video(02, 'GK', 3,  30),
+      Video(03, 'Social Science', 7,  15),
+      Video(04, 'Maths', 8,  15),
+      Video(05, 'English', 3, 1),
     
 
     ];
@@ -97,14 +95,13 @@ class VideoListingGridState extends State<VideoListingGrid> {
 class Video {
 
   Video(
-    this.context,
-      this.no, this.categoryname, this.noofcourse, this.date);
+      this.no, this.courses, this.noofvideos, this.date);
 
   final int no;
 
-  BuildContext context;
-  final String categoryname;
-  final int noofcourse;
+
+  final String courses;
+  final int noofvideos;
 
 
 
@@ -121,11 +118,11 @@ class VideoDataSource extends DataGridSource {
         .map<DataGridRow>((e) => DataGridRow(cells: [
               DataGridCell<int>(columnName: 'no', value: e.no),
               DataGridCell<String>(
-                columnName: 'categoryname',
-                value: e.categoryname,
+                columnName: 'courses',
+                value: e.courses,
               ),
               
-              DataGridCell<int>(columnName: 'noofcourse', value: e.noofcourse),
+              DataGridCell<int>(columnName: 'noofvideos', value: e.noofvideos),
            
               DataGridCell<int>(columnName: 'date', value: e.date),
             ]))
@@ -146,7 +143,7 @@ class VideoDataSource extends DataGridSource {
         cells: row.getCells().map<Widget>((e) {
           return GestureDetector(
             onTap: (){
-          
+              
             },
             child: Container(
                      
