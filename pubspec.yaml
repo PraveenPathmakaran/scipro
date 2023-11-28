@@ -47,7 +47,6 @@ dependencies:
   sidebar_drawer:
   image_picker: ^1.0.4
   syncfusion_flutter_datagrid:
-
   dropdown_search: ^5.0.6
 
 dev_dependencies:

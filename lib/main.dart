@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:scipro/presentation/admin_panel/slider_drawer/slider_drawerd.dart';
+
+import 'presentation/admin_panel/upload_video_recorded_courses_folder/course_selection_page/upload_video.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       scrollBehavior: ScrollingConfig(),
-      home:const AdminPanelPage(),
+      home: const UploadVideo(),
     );
   }
 }
