@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scipro/presentation/admin_panel/slider_drawer/slider_drawerd.dart';
+
+import 'presentation/admin_panel/upload_video_recorded_courses_folder/upload_videos_recorded_courses.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: AdminPanelPage(),
+      home: UploadVideosRecordedCourses(),
     );
   }
 }
