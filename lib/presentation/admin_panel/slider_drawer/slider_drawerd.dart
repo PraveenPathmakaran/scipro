@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scipro/presentation/admin_panel/video_management/recorded_courses/create_recorded_course.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
 import 'package:scipro/presentation/widgets/google_fonts/google_popins.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
@@ -41,21 +42,19 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
 }
 
 List<Widget> pages = [
-  Container(
-    child: const Center(
-      child: Text("data"),
-    ),
-  ),
-  Container(
-    child: const Center(
-      child: Text("data"),
-    ),
-  ),
-  Container(
-    child: const Center(
-      child: Text("data"),
-    ),
-  )
+const CreateRecordedCourses(),
+const CreateRecordedCourses(),
+const CreateRecordedCourses(),
+  // Container(
+  //   child: const Center(
+  //     child: Text("data"),
+  //   ),
+  // ),
+  // Container(
+  //   child: const Center(
+  //     child: Text("data"),
+  //   ),
+  // )
 ];
 
 class SideBarMenuItemsWidget extends StatelessWidget {
