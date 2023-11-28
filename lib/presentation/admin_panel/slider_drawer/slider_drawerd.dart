@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scipro/presentation/admin_panel/video_management/recorded_courses/create_recorded_course.dart';
 import 'package:scipro/presentation/admin_panel/Subscribed_std/subscribed_student.dart';
 import 'package:scipro/presentation/admin_panel/video_management/video_listing.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
@@ -55,6 +56,19 @@ List<Widget> pages = [
     ),
   ),
      const SubscribedStd()
+const CreateRecordedCourses(),
+const CreateRecordedCourses(),
+const CreateRecordedCourses(),
+  // Container(
+  //   child: const Center(
+  //     child: Text("data"),
+  //   ),
+  // ),
+  // Container(
+  //   child: const Center(
+  //     child: Text("data"),
+  //   ),
+  // )
 ];
 
 class SideBarMenuItemsWidget extends StatelessWidget {
@@ -108,11 +122,11 @@ class SideBarMenuItemsWidget extends StatelessWidget {
 }
 
 List<String> sideMenu = [
-  //'Staff Management',
+  'Staff Management',
   'Client Management',
   'Video Management',
   'Article Management',
-  "Subscribed Students",
+  // 'Visitors Pass',
   // 'Students Manage',
   // 'Students Payment',
   // 'Employee Manage',
