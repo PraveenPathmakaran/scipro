@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-import 'presentation/admin_panel/upload_video_recorded_courses_folder/upload_videos_recorded_courses.dart';
+import 'package:flutter/material.dart';
+import 'package:scipro/presentation/admin_panel/slider_drawer/slider_drawerd.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -11,8 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: UploadVideosRecordedCourses(),
+    return MaterialApp(
+      scrollBehavior: ScrollingConfig(),
+      home:const AdminPanelPage(),
     );
   }
+}
+
+class ScrollingConfig extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices =>
+      {PointerDeviceKind.touch, PointerDeviceKind.mouse};
 }

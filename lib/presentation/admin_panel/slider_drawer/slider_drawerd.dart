@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:scipro/presentation/admin_panel/Subscribed_std/subscribed_student.dart';
+import 'package:scipro/presentation/admin_panel/video_management/video_listing.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
 import 'package:scipro/presentation/widgets/google_fonts/google_popins.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
@@ -46,16 +48,13 @@ List<Widget> pages = [
       child: Text("data"),
     ),
   ),
+ const VideoListingContainer(),
   Container(
     child: const Center(
       child: Text("data"),
     ),
   ),
-  Container(
-    child: const Center(
-      child: Text("data"),
-    ),
-  )
+     const SubscribedStd()
 ];
 
 class SideBarMenuItemsWidget extends StatelessWidget {
@@ -109,11 +108,11 @@ class SideBarMenuItemsWidget extends StatelessWidget {
 }
 
 List<String> sideMenu = [
-  'Staff Management',
+  //'Staff Management',
   'Client Management',
   'Video Management',
   'Article Management',
-  // 'Visitors Pass',
+  "Subscribed Students",
   // 'Students Manage',
   // 'Students Payment',
   // 'Employee Manage',
