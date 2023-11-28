@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CommonTextField extends StatelessWidget {
-  CommonTextField(
+const CommonTextField(
       {super.key, required this.hintText, required this.borderRadius});
 
-  String hintText;
-  double borderRadius;
+  final String hintText;
+ final  double borderRadius;
 
   @override
   Widget build(BuildContext context) {

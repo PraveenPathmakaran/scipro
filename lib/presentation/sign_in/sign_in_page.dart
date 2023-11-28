@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scipro/presentation/home/home_page.dart';
 import 'package:scipro/presentation/resources/assets_manager.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
-import 'package:scipro/presentation/resources/string_manager.dart';
 import 'package:scipro/presentation/sign_in/sign_up_page.dart';
 import 'package:scipro/presentation/widgets/bottom_container.dart';
 import 'package:scipro/presentation/widgets/common_button_widget.dart';
@@ -35,11 +33,11 @@ class SignInPage extends StatelessWidget {
                 width: double.infinity,
                 height: 500,
                 color: Colors.blue.withOpacity(0.7),
-                child: Row(
+                child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 50.0),
+                      padding: EdgeInsets.only(left: 50.0),
                       child: PrimaryFontWidget(
                           text: 'Sign In',
                           fontSize: 70,
@@ -59,7 +57,8 @@ class SignInPage extends StatelessWidget {
                 left: sWidth.width / 3,
                 top: 100,
                 bottom: 25),
-            child: CommonTextField(hintText: 'Email ID', borderRadius: 10),
+            child:
+                const CommonTextField(hintText: 'Email ID', borderRadius: 10),
           ),
           Padding(
             padding: EdgeInsets.only(
@@ -67,7 +66,8 @@ class SignInPage extends StatelessWidget {
                 left: sWidth.width / 3,
                 top: 25,
                 bottom: 25),
-            child: CommonTextField(hintText: 'Password', borderRadius: 10),
+            child:
+                const CommonTextField(hintText: 'Password', borderRadius: 10),
           ),
           Container(
             height: 50,
@@ -79,13 +79,13 @@ class SignInPage extends StatelessWidget {
                 text: 'Sign In',
                 textColor: Colors.black),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              PrimaryFontWidget(
+              const PrimaryFontWidget(
                   text: 'Don\'t have an account?',
                   fontSize: 12,
                   fontweight: FontWeight.w500,
@@ -102,10 +102,10 @@ class SignInPage extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          BottomContainer()
+          const BottomContainer()
         ],
       ),
     );

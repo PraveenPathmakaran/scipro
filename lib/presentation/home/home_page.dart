@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:scipro/presentation/resources/assets_manager.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
 import 'package:scipro/presentation/widgets/common_button_widget.dart';
@@ -117,11 +115,11 @@ class Scipro extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.phone,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       GoogleMonstserratWidgets(
@@ -139,11 +137,11 @@ class Scipro extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.mail,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       GoogleMonstserratWidgets(
@@ -163,8 +161,8 @@ class Scipro extends StatelessWidget {
                   color: ColorManager.primary,
                   height: 40,
                   width: 100,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
+                  child: const Padding(
+                    padding: EdgeInsets.only(right: 20.0),
                     child: CommonButtonWidget(
                         color: Colors.green,
                         text: 'Login',
@@ -189,18 +187,18 @@ class Scipro extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 500,
                       height: 500,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          PrimaryFontWidget(
+                          const PrimaryFontWidget(
                               text: 'Your Dream Job is\ncloser than you Think',
                               fontSize: 40,
                               fontweight: FontWeight.bold,
                               color: Colors.white),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -237,7 +235,7 @@ class Scipro extends StatelessWidget {
               Positioned(
                 bottom: -200,
                 right: -200,
-                child: Container(
+                child: SizedBox(
                   width: 200,
                   height: 100,
                   child: CustomPaint(
@@ -247,7 +245,7 @@ class Scipro extends StatelessWidget {
               )
             ],
           ),
-          Text('data')
+          const Text('data')
         ],
       ),
     );
@@ -283,7 +281,8 @@ class MyHoverText extends StatefulWidget {
   final Color defaultColor;
   final Color hoverColor;
 
-  MyHoverText({
+  const MyHoverText({
+    super.key,
     required this.text,
     required this.defaultColor,
     required this.hoverColor,
