@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scipro/presentation/admin_panel/Subscribed_std/subscribed_student.dart';
+import 'package:scipro/presentation/admin_panel/slider_drawer/drawer_logo.dart';
 import 'package:scipro/presentation/admin_panel/video_management/recorded_courses/create_recorded_course.dart';
 import 'package:scipro/presentation/admin_panel/video_management/video_listing.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
@@ -29,6 +30,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
           ],
         ),
         drawer: ListView(children: [
+          const WebApplicationLogoContainer(),
           SideBarMenuItemsWidget(
             selectedIndex: selectedIndex,
             onTap: (index) {
