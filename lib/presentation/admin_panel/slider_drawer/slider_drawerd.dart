@@ -42,9 +42,9 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
 }
 
 List<Widget> pages = [
-const CreateRecordedCourses(),
-const CreateRecordedCourses(),
-const CreateRecordedCourses(),
+ CreateRecordedCourses(),
+ CreateRecordedCourses(),
+ CreateRecordedCourses(),
   // Container(
   //   child: const Center(
   //     child: Text("data"),
