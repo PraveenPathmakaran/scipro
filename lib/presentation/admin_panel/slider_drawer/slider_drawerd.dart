@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scipro/presentation/admin_panel/Subscribed_std/subscribed_student.dart';
-import 'package:scipro/presentation/admin_panel/video_management/video_listing.dart';
+import 'package:scipro/presentation/admin_panel/video_management/video_listing/video_listing.dart';
 import 'package:scipro/presentation/resources/color_manager.dart';
 import 'package:scipro/presentation/widgets/google_fonts/google_popins.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';

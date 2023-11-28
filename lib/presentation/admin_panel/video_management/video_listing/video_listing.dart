@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scipro/presentation/admin_panel/Subscribed_std/widget/button.dart';
-import 'package:scipro/presentation/admin_panel/Subscribed_std/sub_std_grid.dart';
 import 'package:scipro/presentation/admin_panel/video_management/video_grid.dart';
 import 'package:scipro/presentation/widgets/responsive/responsive.dart';
 
@@ -34,12 +33,12 @@ class VideoListingContainer extends StatelessWidget {
         width: 400,
           child: VideoListingGrid()),
       ),
-    ):SingleChildScrollView(
-      child:  Container(
+    ):const SingleChildScrollView(
+      child:  SizedBox(
         width: double.infinity,
         height: 500,
        // color: const Color.fromARGB(255, 223, 107, 107),
-        child: const VideoListingGrid(),
+        child: VideoListingGrid(),
       ),
     ),
     ],)
