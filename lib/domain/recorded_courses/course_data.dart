@@ -14,7 +14,10 @@ abstract class CourseData implements _$CourseData {
     required UniqueId uniqueId,
     required CourseName courseName,
     required FacultyName facultyName,
+    required UniqueId categoryId,
     required CourseFee fee,
+    required List<CourseVideoUrl> videos,
+    required List<StudentId> subscribedStudents,
     required CourseDuraion duration,
   }) = _CourseData;
 
@@ -22,7 +25,10 @@ abstract class CourseData implements _$CourseData {
       uniqueId: UniqueId(),
       courseName: CourseName(''),
       facultyName: FacultyName(''),
+      categoryId: UniqueId(),
       fee: CourseFee(''),
+      videos: [],
+      subscribedStudents: [],
       duration: CourseDuraion(''));
 
   Option<ValueFailure<dynamic>> get failureOption {
@@ -30,6 +36,14 @@ abstract class CourseData implements _$CourseData {
         .andThen(facultyName.failureOrUnit)
         .andThen(fee.failureOrUnit)
         .andThen(duration.failureOrUnit)
+        .andThen(videos
+            .map((e) => e.failureOrUnit)
+            .where((element) => element.isLeft())
+            .first)
+        .andThen(subscribedStudents
+            .map((e) => e.failureOrUnit)
+            .where((element) => element.isLeft())
+            .first)
         .fold((failure) => some(failure), (r) => none());
   }
 }

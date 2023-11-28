@@ -35,21 +35,28 @@ class RecordedCourseCategoryBloc
       isSubmitting: true,
       recordedCoursesFailureOrSuccessOption: none(),
     ));
+    if (state.courseCategory.failureOption.isNone()) {
+      final isExistValue = await _repository
+          .isCategoryExist(state.courseCategory.categoryName.getOrCrash());
 
-    final isExistValue = await _repository
-        .isCategoryExist(state.courseCategory.categoryName.getOrCrash());
-
-    await isExistValue.fold((_) async {
+      await isExistValue.fold((_) async {
+        emit(state.copyWith(
+            isSubmitting: false,
+            recordedCoursesFailureOrSuccessOption: some(isExistValue)));
+      }, (_) async {
+        final failureOrSuccessOption = await _repository.createCategory(
+            courseCategory: state.courseCategory);
+        emit(state.copyWith(
+            isSubmitting: false,
+            recordedCoursesFailureOrSuccessOption:
+                some(failureOrSuccessOption)));
+      });
+    } else {
       emit(state.copyWith(
-          isSubmitting: false,
-          recordedCoursesFailureOrSuccessOption: some(isExistValue)));
-    }, (_) async {
-      final failureOrSuccessOption = await _repository.createCategory(
-          courseCategory: state.courseCategory);
-      emit(state.copyWith(
-          isSubmitting: false,
-          recordedCoursesFailureOrSuccessOption: some(failureOrSuccessOption)));
-    });
+        isSubmitting: false,
+        recordedCoursesFailureOrSuccessOption: none(),
+      ));
+    }
   }
 
   Future<void> categoryUpdate(
@@ -61,20 +68,27 @@ class RecordedCourseCategoryBloc
       recordedCoursesFailureOrSuccessOption: none(),
     ));
 
-    final isExistValue = await _repository
-        .isCategoryExist(state.courseCategory.categoryName.getOrCrash());
+    if (state.courseCategory.failureOption.isNone()) {
+      final isExistValue = await _repository
+          .isCategoryExist(state.courseCategory.categoryName.getOrCrash());
 
-    await isExistValue.fold((_) async {
-      emit(state.copyWith(
+      await isExistValue.fold((_) async {
+        emit(state.copyWith(
+            isSubmitting: false,
+            recordedCoursesFailureOrSuccessOption: some(isExistValue)));
+      }, (_) async {
+        final failureOrSuccessOption = await _repository.updateCategoryName(
+            courseCategory: state.courseCategory);
+        emit(state.copyWith(
           isSubmitting: false,
-          recordedCoursesFailureOrSuccessOption: some(isExistValue)));
-    }, (_) async {
-      final failureOrSuccessOption = await _repository.updateCategoryName(
-          courseCategory: state.courseCategory);
+          recordedCoursesFailureOrSuccessOption: some(failureOrSuccessOption),
+        ));
+      });
+    } else {
       emit(state.copyWith(
         isSubmitting: false,
-        recordedCoursesFailureOrSuccessOption: some(failureOrSuccessOption),
+        recordedCoursesFailureOrSuccessOption: none(),
       ));
-    });
+    }
   }
 }

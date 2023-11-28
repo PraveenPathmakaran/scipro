@@ -19,7 +19,10 @@ mixin _$CourseData {
   UniqueId get uniqueId => throw _privateConstructorUsedError;
   CourseName get courseName => throw _privateConstructorUsedError;
   FacultyName get facultyName => throw _privateConstructorUsedError;
+  UniqueId get categoryId => throw _privateConstructorUsedError;
   CourseFee get fee => throw _privateConstructorUsedError;
+  List<CourseVideoUrl> get videos => throw _privateConstructorUsedError;
+  List<StudentId> get subscribedStudents => throw _privateConstructorUsedError;
   CourseDuraion get duration => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -37,7 +40,10 @@ abstract class $CourseDataCopyWith<$Res> {
       {UniqueId uniqueId,
       CourseName courseName,
       FacultyName facultyName,
+      UniqueId categoryId,
       CourseFee fee,
+      List<CourseVideoUrl> videos,
+      List<StudentId> subscribedStudents,
       CourseDuraion duration});
 }
 
@@ -57,7 +63,10 @@ class _$CourseDataCopyWithImpl<$Res, $Val extends CourseData>
     Object? uniqueId = null,
     Object? courseName = null,
     Object? facultyName = null,
+    Object? categoryId = null,
     Object? fee = null,
+    Object? videos = null,
+    Object? subscribedStudents = null,
     Object? duration = null,
   }) {
     return _then(_value.copyWith(
@@ -73,10 +82,22 @@ class _$CourseDataCopyWithImpl<$Res, $Val extends CourseData>
           ? _value.facultyName
           : facultyName // ignore: cast_nullable_to_non_nullable
               as FacultyName,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as CourseFee,
+      videos: null == videos
+          ? _value.videos
+          : videos // ignore: cast_nullable_to_non_nullable
+              as List<CourseVideoUrl>,
+      subscribedStudents: null == subscribedStudents
+          ? _value.subscribedStudents
+          : subscribedStudents // ignore: cast_nullable_to_non_nullable
+              as List<StudentId>,
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -97,7 +118,10 @@ abstract class _$$CourseDataImplCopyWith<$Res>
       {UniqueId uniqueId,
       CourseName courseName,
       FacultyName facultyName,
+      UniqueId categoryId,
       CourseFee fee,
+      List<CourseVideoUrl> videos,
+      List<StudentId> subscribedStudents,
       CourseDuraion duration});
 }
 
@@ -115,7 +139,10 @@ class __$$CourseDataImplCopyWithImpl<$Res>
     Object? uniqueId = null,
     Object? courseName = null,
     Object? facultyName = null,
+    Object? categoryId = null,
     Object? fee = null,
+    Object? videos = null,
+    Object? subscribedStudents = null,
     Object? duration = null,
   }) {
     return _then(_$CourseDataImpl(
@@ -131,10 +158,22 @@ class __$$CourseDataImplCopyWithImpl<$Res>
           ? _value.facultyName
           : facultyName // ignore: cast_nullable_to_non_nullable
               as FacultyName,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as CourseFee,
+      videos: null == videos
+          ? _value._videos
+          : videos // ignore: cast_nullable_to_non_nullable
+              as List<CourseVideoUrl>,
+      subscribedStudents: null == subscribedStudents
+          ? _value._subscribedStudents
+          : subscribedStudents // ignore: cast_nullable_to_non_nullable
+              as List<StudentId>,
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -150,9 +189,14 @@ class _$CourseDataImpl extends _CourseData {
       {required this.uniqueId,
       required this.courseName,
       required this.facultyName,
+      required this.categoryId,
       required this.fee,
+      required final List<CourseVideoUrl> videos,
+      required final List<StudentId> subscribedStudents,
       required this.duration})
-      : super._();
+      : _videos = videos,
+        _subscribedStudents = subscribedStudents,
+        super._();
 
   @override
   final UniqueId uniqueId;
@@ -161,13 +205,32 @@ class _$CourseDataImpl extends _CourseData {
   @override
   final FacultyName facultyName;
   @override
+  final UniqueId categoryId;
+  @override
   final CourseFee fee;
+  final List<CourseVideoUrl> _videos;
+  @override
+  List<CourseVideoUrl> get videos {
+    if (_videos is EqualUnmodifiableListView) return _videos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_videos);
+  }
+
+  final List<StudentId> _subscribedStudents;
+  @override
+  List<StudentId> get subscribedStudents {
+    if (_subscribedStudents is EqualUnmodifiableListView)
+      return _subscribedStudents;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_subscribedStudents);
+  }
+
   @override
   final CourseDuraion duration;
 
   @override
   String toString() {
-    return 'CourseData(uniqueId: $uniqueId, courseName: $courseName, facultyName: $facultyName, fee: $fee, duration: $duration)';
+    return 'CourseData(uniqueId: $uniqueId, courseName: $courseName, facultyName: $facultyName, categoryId: $categoryId, fee: $fee, videos: $videos, subscribedStudents: $subscribedStudents, duration: $duration)';
   }
 
   @override
@@ -181,14 +244,27 @@ class _$CourseDataImpl extends _CourseData {
                 other.courseName == courseName) &&
             (identical(other.facultyName, facultyName) ||
                 other.facultyName == facultyName) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
             (identical(other.fee, fee) || other.fee == fee) &&
+            const DeepCollectionEquality().equals(other._videos, _videos) &&
+            const DeepCollectionEquality()
+                .equals(other._subscribedStudents, _subscribedStudents) &&
             (identical(other.duration, duration) ||
                 other.duration == duration));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, uniqueId, courseName, facultyName, fee, duration);
+      runtimeType,
+      uniqueId,
+      courseName,
+      facultyName,
+      categoryId,
+      fee,
+      const DeepCollectionEquality().hash(_videos),
+      const DeepCollectionEquality().hash(_subscribedStudents),
+      duration);
 
   @JsonKey(ignore: true)
   @override
@@ -202,7 +278,10 @@ abstract class _CourseData extends CourseData {
       {required final UniqueId uniqueId,
       required final CourseName courseName,
       required final FacultyName facultyName,
+      required final UniqueId categoryId,
       required final CourseFee fee,
+      required final List<CourseVideoUrl> videos,
+      required final List<StudentId> subscribedStudents,
       required final CourseDuraion duration}) = _$CourseDataImpl;
   const _CourseData._() : super._();
 
@@ -213,7 +292,13 @@ abstract class _CourseData extends CourseData {
   @override
   FacultyName get facultyName;
   @override
+  UniqueId get categoryId;
+  @override
   CourseFee get fee;
+  @override
+  List<CourseVideoUrl> get videos;
+  @override
+  List<StudentId> get subscribedStudents;
   @override
   CourseDuraion get duration;
   @override

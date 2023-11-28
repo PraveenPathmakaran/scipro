@@ -17,14 +17,24 @@ class RecordedCourseBloc
     on<RecordedCourseEvent>((event, emit) async {
       await event.map(
         createButtonPressed: (_) async {
-          emit(
-            state.copyWith(
-              isSubmitting: true,
-              recordedCoursesFailureOrSuccessOption: none(),
-            ),
-          );
+          emit(state.copyWith(
+            isSubmitting: true,
+            recordedCoursesFailureOrSuccessOption: none(),
+          ));
+          if (state.courseData.failureOption.isNone()) {
+            final failureOrSuccess =
+                await _repository.createCourse(courseData: state.courseData);
 
-          _repository.
+            emit(state.copyWith(
+              isSubmitting: false,
+              recordedCoursesFailureOrSuccessOption: some(failureOrSuccess),
+            ));
+          } else {
+            emit(state.copyWith(
+              isSubmitting: false,
+              recordedCoursesFailureOrSuccessOption: none(),
+            ));
+          }
         },
       );
     });

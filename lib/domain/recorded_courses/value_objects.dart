@@ -64,3 +64,27 @@ class CourseCategoryName extends ValueObject<String> {
     this.value,
   );
 }
+
+class CourseVideoUrl extends ValueObject<String> {
+  @override
+  Either<ValueFailure<String>, String> value;
+
+  factory CourseVideoUrl(String input) {
+    return CourseVideoUrl._(validateStringNotEmpty(input));
+  }
+  CourseVideoUrl._(
+    this.value,
+  );
+}
+
+class StudentId extends ValueObject<String> {
+  @override
+  Either<ValueFailure<String>, String> value;
+
+  factory StudentId(String input) {
+    return StudentId._(validateStringNotEmpty(input));
+  }
+  StudentId._(
+    this.value,
+  );
+}

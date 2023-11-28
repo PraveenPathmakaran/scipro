@@ -16,10 +16,17 @@ Map<String, dynamic> _$SeverTimeStampConvertorToJson(
 
 _$CourseDataDtosImpl _$$CourseDataDtosImplFromJson(Map<String, dynamic> json) =>
     _$CourseDataDtosImpl(
+      id: json['id'] as String,
       courseName: json['courseName'] as String,
       facultyName: json['facultyName'] as String,
+      categoryId: json['categoryId'] as String,
       courseFee: json['courseFee'] as num,
       courseDuraion: json['courseDuraion'] as num,
+      videoUrls:
+          (json['videoUrls'] as List<dynamic>).map((e) => e as String).toList(),
+      subscribedStudents: (json['subscribedStudents'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
       serverTimeStamp: const SeverTimeStampConvertor()
           .fromJson(json['serverTimeStamp'] as Object),
     );
@@ -27,10 +34,14 @@ _$CourseDataDtosImpl _$$CourseDataDtosImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CourseDataDtosImplToJson(
         _$CourseDataDtosImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'courseName': instance.courseName,
       'facultyName': instance.facultyName,
+      'categoryId': instance.categoryId,
       'courseFee': instance.courseFee,
       'courseDuraion': instance.courseDuraion,
+      'videoUrls': instance.videoUrls,
+      'subscribedStudents': instance.subscribedStudents,
       'serverTimeStamp':
           const SeverTimeStampConvertor().toJson(instance.serverTimeStamp),
     };

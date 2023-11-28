@@ -27,23 +27,30 @@ class SeverTimeStampConvertor implements JsonConverter<FieldValue, Object> {
 abstract class CourseDataDtos implements _$CourseDataDtos {
   const CourseDataDtos._();
   const factory CourseDataDtos({
-    @JsonKey(includeFromJson: false, includeToJson: false)
-    @Default('')
-    String id,
+    required String id,
     required String courseName,
     required String facultyName,
+    required String categoryId,
     required num courseFee,
     required num courseDuraion,
+    required List<String> videoUrls,
+    required List<String> subscribedStudents,
     @SeverTimeStampConvertor() required FieldValue serverTimeStamp,
   }) = _CourseDataDtos;
 
   factory CourseDataDtos.fromDomain(CourseData courseData) {
     return CourseDataDtos(
-        courseName: courseData.courseName.getOrCrash(),
-        facultyName: courseData.facultyName.getOrCrash(),
-        courseFee: num.parse(courseData.fee.getOrCrash()),
-        courseDuraion: num.parse(courseData.duration.getOrCrash()),
-        serverTimeStamp: FieldValue.serverTimestamp());
+      courseName: courseData.courseName.getOrCrash(),
+      facultyName: courseData.facultyName.getOrCrash(),
+      courseFee: num.parse(courseData.fee.getOrCrash()),
+      courseDuraion: num.parse(courseData.duration.getOrCrash()),
+      serverTimeStamp: FieldValue.serverTimestamp(),
+      categoryId: courseData.categoryId.getOrCrash(),
+      videoUrls: courseData.videos.map((e) => e.getOrCrash()).toList(),
+      subscribedStudents:
+          courseData.subscribedStudents.map((e) => e.getOrCrash()).toList(),
+      id: courseData.uniqueId.getOrCrash(),
+    );
   }
 
   CourseData toDomain() {
@@ -52,16 +59,17 @@ abstract class CourseDataDtos implements _$CourseDataDtos {
         courseName: CourseName(courseName),
         facultyName: FacultyName(facultyName),
         fee: CourseFee(courseFee.toString()),
-        duration: CourseDuraion(courseDuraion.toString()));
+        duration: CourseDuraion(courseDuraion.toString()),
+        categoryId: UniqueId.fromUniqueString(categoryId),
+        videos: videoUrls.map((e) => CourseVideoUrl(e)).toList(),
+        subscribedStudents:
+            subscribedStudents.map((e) => StudentId(e)).toList());
   }
 
   factory CourseDataDtos.fromJson(Map<String, dynamic> json) =>
       _$CourseDataDtosFromJson(json);
-
-  // factory CourseDataDtos.fromFirestore(
-  //     DocumentSnapshot<Map<String, dynamic>> doc) {
-  //   return CourseDataDtos.fromJson(doc.data() ?? {}).copyWith(
-  //     id: doc.data(),
-  //   );
-  // }
+   factory CourseDataDtos.fromFirestore(DocumentSnapshot doc) {
+    return CourseDataDtos.fromJson(
+        (doc.data() as Map<String, dynamic>?) ?? {});
+  }
 }
