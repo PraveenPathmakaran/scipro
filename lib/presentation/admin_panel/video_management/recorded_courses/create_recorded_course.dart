@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,15 +7,11 @@ import 'package:scipro/presentation/widgets/responsive/responsive.dart';
 
 import '../../../widgets/textform feild Widget/textformfeildWidget.dart';
 
-class CreateRecordedCourses extends StatefulWidget {
-  const CreateRecordedCourses({super.key, Key});
+class CreateRecordedCourses extends StatelessWidget {
+   CreateRecordedCourses({super.key, Key});
 
-  @override
-  State<CreateRecordedCourses> createState() => _CreateRecordedCoursesState();
-}
-
-class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
   var selectstate;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,8 +22,25 @@ class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
             children: [
                Padding(
                   padding: const EdgeInsets.only(top: 10,left: 10),
-                  child: ButtonWidget(
-                    text: 'Category',
+                  child: GestureDetector(
+                    onTap: (){showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title:  const GooglePoppinsWidgets(text: 'Category', fontsize: 18,),
+          content: const TextField(
+            decoration: InputDecoration(hintText: "Enter the Category"),
+          ),
+          actions: <Widget>[
+           
+            ButtonWidget(text: "Create")
+          ],
+        );
+      },
+    );} ,
+                    child: ButtonWidget(
+                      text: 'Category',
+                    ),
                   ),
                 ),
               GestureDetector(
@@ -51,6 +62,9 @@ class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
       ),
     );
   }
+
+   
+  
 
   void CreateRecordedCoursesDialog(BuildContext context) {
     showDialog(
@@ -79,16 +93,16 @@ class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
           content: ResponsiveWebSite.isMobile(context)
               ? SingleChildScrollView(
                   child: Column(
-                    children: List.generate(8, (index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(top: 10, right: 10),
-                        child: TextFormFiledContainerWidget(
-                          hintText: "Create Course",
-                          title: "Create Course",
-                          width: double.infinity,
-                        ),
-                      );
-                    }),
+                    children: [
+                      recCousesWidget[0],
+                      recCousesWidget[1],
+                      recCousesWidget[2],
+                      recCousesWidget[3],
+                      recCousesWidget[4],
+                      recCousesWidget[5],
+                      recCousesWidget[6],
+                      recCousesWidget[7],
+                    ]
                   ),
                 )
               : Row(
@@ -131,26 +145,8 @@ class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 recCousesWidget[6],
-                               SizedBox(
-                                height: 35,
-                                width: 300,
-                                child: Center(
-                                  child: DropdownSearch(
-                                    autoValidateMode: AutovalidateMode.always,
-                                    onChanged: (value) {
-                                      selectstate = value ?? '';
-                                      log("$selectstate-------");
-                                    },
-                                    dropdownDecoratorProps:
-                                        DropDownDecoratorProps(
-                                            baseStyle: GoogleFonts.poppins(
-                                                fontSize: 13,
-                                                color: Colors.black
-                                                    .withOpacity(0.7))),
-                                    selectedItem: 'All States',
-                                    //items: listofState,
-                                  ),
-                                )),
+                                recCousesWidget[7]
+                              
                               ],
                             ),
                           ),
@@ -164,6 +160,7 @@ class _CreateRecordedCoursesState extends State<CreateRecordedCourses> {
       },
     );
   }
+  
 }
 
 class ButtonWidget extends StatelessWidget {
@@ -177,10 +174,11 @@ class ButtonWidget extends StatelessWidget {
         color: ColorManager.themeColorBlue,
         borderRadius: BorderRadius.horizontal(),
       ),
-      width: 100,
-      height: 30,
+      width: 140,
+      height: 40,
       child: Center(
         child: GooglePoppinsWidgets(
+          textAlign:TextAlign.center,
           color: ColorManager.cwhite,
           fontWeight: FontWeight.bold,
           text: text,
@@ -247,14 +245,41 @@ List<Widget> recCousesWidget= [
                                       title: "Posted Time",
                                       width: 200),
                                 ),/////////////7
-                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 10),
-                                  child: TextFormFiledContainerWidget(
-                                      hintText: "Category ",
-                                      title: "Category",
-                                      width: 200),
-                                ),/////////8
+                                  Padding(
+                                 padding: const EdgeInsets.only(top: 10,),
+                                 child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: GooglePoppinsWidgets(text: 'Category', fontsize: 12),
+                                    ),
+                                     Padding(
+                                       padding: const EdgeInsets.only(top: 7,left: 10),
+                                       child: SizedBox(
+                                        
+                                        height: 35,
+                                        width: 200,
+                                        child: Center(
+                                          child: DropdownSearch(
+                                            autoValidateMode: AutovalidateMode.always,
+                                            // onChanged: (value) {
+                                            //   selectstate = value ?? '';
+                                            //   log("$selectstate-------");
+                                            // },
+                                            dropdownDecoratorProps:
+                                                DropDownDecoratorProps(
+                                                    baseStyle: GoogleFonts.poppins(
+                                                        fontSize: 13,
+                                                        color: Colors.black
+                                                            .withOpacity(0.7))),
+                                            selectedItem: 'Category',
+                                            //items: listofState,
+                                          ),
+                                        )),
+                                     ),
+                                   ],
+                                 ),
+                               ),/////////8
 
   
 ];
