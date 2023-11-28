@@ -9,6 +9,15 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   }
 }
 
+Either<ValueFailure<String>, String> validateNumber(String input) {
+  final value = num.tryParse(input);
+  if (value != null) {
+    return right(input);
+  } else {
+    return left(ValueFailure.notAnumber(failedValue: input));
+  }
+}
+
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const String emailRegex =
       r"""^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+""";
