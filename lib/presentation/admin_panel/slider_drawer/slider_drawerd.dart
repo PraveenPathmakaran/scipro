@@ -46,7 +46,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
 }
 
 List<Widget> pages = [
-  const CreateRecordedCourses(),
+  CreateRecordedCourses(),
 
   const VideoListingContainer(),
   Container(
