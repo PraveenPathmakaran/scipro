@@ -17,10 +17,12 @@ class RecordedCourseCategoryBloc
       : super(RecordedCourseCategoryState.initial()) {
     on<RecordedCourseCategoryEvent>((event, emit) async {
       await event.map(
-        createCategoryButtonPressed: (value) async {
+        createCategoryButtonPressed: (_) async {
           await createCategory(event, emit);
         },
-        categoryNameUpdateButtonPressed: (value) {},
+        categoryNameUpdateButtonPressed: (_) async {
+          await categoryUpdate(event, emit);
+        },
       );
     });
   }
@@ -70,8 +72,9 @@ class RecordedCourseCategoryBloc
       final failureOrSuccessOption = await _repository.updateCategoryName(
           courseCategory: state.courseCategory);
       emit(state.copyWith(
-          isSubmitting: false,
-          recordedCoursesFailureOrSuccessOption: some(failureOrSuccessOption)));
+        isSubmitting: false,
+        recordedCoursesFailureOrSuccessOption: some(failureOrSuccessOption),
+      ));
     });
   }
 }
