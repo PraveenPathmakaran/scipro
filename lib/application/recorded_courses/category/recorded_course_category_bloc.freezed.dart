@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'recorded_courses_bloc.dart';
+part of 'recorded_course_category_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,20 +15,23 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$RecordedCoursesEvent {
+mixin _$RecordedCourseCategoryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() createCategoryButtonPressed,
+    required TResult Function() categoryNameUpdateButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? createCategoryButtonPressed,
+    TResult? Function()? categoryNameUpdateButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? createCategoryButtonPressed,
+    TResult Function()? categoryNameUpdateButtonPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -36,35 +39,43 @@ mixin _$RecordedCoursesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(CreateCategoryButtonPressed value)
         createCategoryButtonPressed,
+    required TResult Function(CategoryNameUpdateButtonPressed value)
+        categoryNameUpdateButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CreateCategoryButtonPressed value)?
         createCategoryButtonPressed,
+    TResult? Function(CategoryNameUpdateButtonPressed value)?
+        categoryNameUpdateButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateCategoryButtonPressed value)?
         createCategoryButtonPressed,
+    TResult Function(CategoryNameUpdateButtonPressed value)?
+        categoryNameUpdateButtonPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RecordedCoursesEventCopyWith<$Res> {
-  factory $RecordedCoursesEventCopyWith(RecordedCoursesEvent value,
-          $Res Function(RecordedCoursesEvent) then) =
-      _$RecordedCoursesEventCopyWithImpl<$Res, RecordedCoursesEvent>;
+abstract class $RecordedCourseCategoryEventCopyWith<$Res> {
+  factory $RecordedCourseCategoryEventCopyWith(
+          RecordedCourseCategoryEvent value,
+          $Res Function(RecordedCourseCategoryEvent) then) =
+      _$RecordedCourseCategoryEventCopyWithImpl<$Res,
+          RecordedCourseCategoryEvent>;
 }
 
 /// @nodoc
-class _$RecordedCoursesEventCopyWithImpl<$Res,
-        $Val extends RecordedCoursesEvent>
-    implements $RecordedCoursesEventCopyWith<$Res> {
-  _$RecordedCoursesEventCopyWithImpl(this._value, this._then);
+class _$RecordedCourseCategoryEventCopyWithImpl<$Res,
+        $Val extends RecordedCourseCategoryEvent>
+    implements $RecordedCourseCategoryEventCopyWith<$Res> {
+  _$RecordedCourseCategoryEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -82,7 +93,7 @@ abstract class _$$CreateCategoryButtonPressedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$CreateCategoryButtonPressedImplCopyWithImpl<$Res>
-    extends _$RecordedCoursesEventCopyWithImpl<$Res,
+    extends _$RecordedCourseCategoryEventCopyWithImpl<$Res,
         _$CreateCategoryButtonPressedImpl>
     implements _$$CreateCategoryButtonPressedImplCopyWith<$Res> {
   __$$CreateCategoryButtonPressedImplCopyWithImpl(
@@ -98,7 +109,7 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
 
   @override
   String toString() {
-    return 'RecordedCoursesEvent.createCategoryButtonPressed()';
+    return 'RecordedCourseCategoryEvent.createCategoryButtonPressed()';
   }
 
   @override
@@ -115,6 +126,7 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() createCategoryButtonPressed,
+    required TResult Function() categoryNameUpdateButtonPressed,
   }) {
     return createCategoryButtonPressed();
   }
@@ -123,6 +135,7 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? createCategoryButtonPressed,
+    TResult? Function()? categoryNameUpdateButtonPressed,
   }) {
     return createCategoryButtonPressed?.call();
   }
@@ -131,6 +144,7 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? createCategoryButtonPressed,
+    TResult Function()? categoryNameUpdateButtonPressed,
     required TResult orElse(),
   }) {
     if (createCategoryButtonPressed != null) {
@@ -144,6 +158,8 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(CreateCategoryButtonPressed value)
         createCategoryButtonPressed,
+    required TResult Function(CategoryNameUpdateButtonPressed value)
+        categoryNameUpdateButtonPressed,
   }) {
     return createCategoryButtonPressed(this);
   }
@@ -153,6 +169,8 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CreateCategoryButtonPressed value)?
         createCategoryButtonPressed,
+    TResult? Function(CategoryNameUpdateButtonPressed value)?
+        categoryNameUpdateButtonPressed,
   }) {
     return createCategoryButtonPressed?.call(this);
   }
@@ -162,6 +180,8 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateCategoryButtonPressed value)?
         createCategoryButtonPressed,
+    TResult Function(CategoryNameUpdateButtonPressed value)?
+        categoryNameUpdateButtonPressed,
     required TResult orElse(),
   }) {
     if (createCategoryButtonPressed != null) {
@@ -171,47 +191,162 @@ class _$CreateCategoryButtonPressedImpl implements CreateCategoryButtonPressed {
   }
 }
 
-abstract class CreateCategoryButtonPressed implements RecordedCoursesEvent {
+abstract class CreateCategoryButtonPressed
+    implements RecordedCourseCategoryEvent {
   const factory CreateCategoryButtonPressed() =
       _$CreateCategoryButtonPressedImpl;
 }
 
 /// @nodoc
-mixin _$RecordedCoursesState {
+abstract class _$$CategoryNameUpdateButtonPressedImplCopyWith<$Res> {
+  factory _$$CategoryNameUpdateButtonPressedImplCopyWith(
+          _$CategoryNameUpdateButtonPressedImpl value,
+          $Res Function(_$CategoryNameUpdateButtonPressedImpl) then) =
+      __$$CategoryNameUpdateButtonPressedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CategoryNameUpdateButtonPressedImplCopyWithImpl<$Res>
+    extends _$RecordedCourseCategoryEventCopyWithImpl<$Res,
+        _$CategoryNameUpdateButtonPressedImpl>
+    implements _$$CategoryNameUpdateButtonPressedImplCopyWith<$Res> {
+  __$$CategoryNameUpdateButtonPressedImplCopyWithImpl(
+      _$CategoryNameUpdateButtonPressedImpl _value,
+      $Res Function(_$CategoryNameUpdateButtonPressedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CategoryNameUpdateButtonPressedImpl
+    implements CategoryNameUpdateButtonPressed {
+  const _$CategoryNameUpdateButtonPressedImpl();
+
+  @override
+  String toString() {
+    return 'RecordedCourseCategoryEvent.categoryNameUpdateButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryNameUpdateButtonPressedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() createCategoryButtonPressed,
+    required TResult Function() categoryNameUpdateButtonPressed,
+  }) {
+    return categoryNameUpdateButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? createCategoryButtonPressed,
+    TResult? Function()? categoryNameUpdateButtonPressed,
+  }) {
+    return categoryNameUpdateButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? createCategoryButtonPressed,
+    TResult Function()? categoryNameUpdateButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (categoryNameUpdateButtonPressed != null) {
+      return categoryNameUpdateButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateCategoryButtonPressed value)
+        createCategoryButtonPressed,
+    required TResult Function(CategoryNameUpdateButtonPressed value)
+        categoryNameUpdateButtonPressed,
+  }) {
+    return categoryNameUpdateButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CreateCategoryButtonPressed value)?
+        createCategoryButtonPressed,
+    TResult? Function(CategoryNameUpdateButtonPressed value)?
+        categoryNameUpdateButtonPressed,
+  }) {
+    return categoryNameUpdateButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateCategoryButtonPressed value)?
+        createCategoryButtonPressed,
+    TResult Function(CategoryNameUpdateButtonPressed value)?
+        categoryNameUpdateButtonPressed,
+    required TResult orElse(),
+  }) {
+    if (categoryNameUpdateButtonPressed != null) {
+      return categoryNameUpdateButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryNameUpdateButtonPressed
+    implements RecordedCourseCategoryEvent {
+  const factory CategoryNameUpdateButtonPressed() =
+      _$CategoryNameUpdateButtonPressedImpl;
+}
+
+/// @nodoc
+mixin _$RecordedCourseCategoryState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   CourseCategory get courseCategory => throw _privateConstructorUsedError;
-  CourseData get courseData => throw _privateConstructorUsedError;
   Option<Either<RecordedCourseFailures, Unit>>
       get recordedCoursesFailureOrSuccessOption =>
           throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RecordedCoursesStateCopyWith<RecordedCoursesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RecordedCourseCategoryStateCopyWith<RecordedCourseCategoryState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RecordedCoursesStateCopyWith<$Res> {
-  factory $RecordedCoursesStateCopyWith(RecordedCoursesState value,
-          $Res Function(RecordedCoursesState) then) =
-      _$RecordedCoursesStateCopyWithImpl<$Res, RecordedCoursesState>;
+abstract class $RecordedCourseCategoryStateCopyWith<$Res> {
+  factory $RecordedCourseCategoryStateCopyWith(
+          RecordedCourseCategoryState value,
+          $Res Function(RecordedCourseCategoryState) then) =
+      _$RecordedCourseCategoryStateCopyWithImpl<$Res,
+          RecordedCourseCategoryState>;
   @useResult
   $Res call(
       {bool isSubmitting,
       CourseCategory courseCategory,
-      CourseData courseData,
       Option<Either<RecordedCourseFailures, Unit>>
           recordedCoursesFailureOrSuccessOption});
 
   $CourseCategoryCopyWith<$Res> get courseCategory;
-  $CourseDataCopyWith<$Res> get courseData;
 }
 
 /// @nodoc
-class _$RecordedCoursesStateCopyWithImpl<$Res,
-        $Val extends RecordedCoursesState>
-    implements $RecordedCoursesStateCopyWith<$Res> {
-  _$RecordedCoursesStateCopyWithImpl(this._value, this._then);
+class _$RecordedCourseCategoryStateCopyWithImpl<$Res,
+        $Val extends RecordedCourseCategoryState>
+    implements $RecordedCourseCategoryStateCopyWith<$Res> {
+  _$RecordedCourseCategoryStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -223,7 +358,6 @@ class _$RecordedCoursesStateCopyWithImpl<$Res,
   $Res call({
     Object? isSubmitting = null,
     Object? courseCategory = null,
-    Object? courseData = null,
     Object? recordedCoursesFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
@@ -235,10 +369,6 @@ class _$RecordedCoursesStateCopyWithImpl<$Res,
           ? _value.courseCategory
           : courseCategory // ignore: cast_nullable_to_non_nullable
               as CourseCategory,
-      courseData: null == courseData
-          ? _value.courseData
-          : courseData // ignore: cast_nullable_to_non_nullable
-              as CourseData,
       recordedCoursesFailureOrSuccessOption: null ==
               recordedCoursesFailureOrSuccessOption
           ? _value.recordedCoursesFailureOrSuccessOption
@@ -254,43 +384,35 @@ class _$RecordedCoursesStateCopyWithImpl<$Res,
       return _then(_value.copyWith(courseCategory: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $CourseDataCopyWith<$Res> get courseData {
-    return $CourseDataCopyWith<$Res>(_value.courseData, (value) {
-      return _then(_value.copyWith(courseData: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$RecordedCoursesStateImplCopyWith<$Res>
-    implements $RecordedCoursesStateCopyWith<$Res> {
-  factory _$$RecordedCoursesStateImplCopyWith(_$RecordedCoursesStateImpl value,
-          $Res Function(_$RecordedCoursesStateImpl) then) =
-      __$$RecordedCoursesStateImplCopyWithImpl<$Res>;
+abstract class _$$RecordedCourseCategoryStateImplCopyWith<$Res>
+    implements $RecordedCourseCategoryStateCopyWith<$Res> {
+  factory _$$RecordedCourseCategoryStateImplCopyWith(
+          _$RecordedCourseCategoryStateImpl value,
+          $Res Function(_$RecordedCourseCategoryStateImpl) then) =
+      __$$RecordedCourseCategoryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {bool isSubmitting,
       CourseCategory courseCategory,
-      CourseData courseData,
       Option<Either<RecordedCourseFailures, Unit>>
           recordedCoursesFailureOrSuccessOption});
 
   @override
   $CourseCategoryCopyWith<$Res> get courseCategory;
-  @override
-  $CourseDataCopyWith<$Res> get courseData;
 }
 
 /// @nodoc
-class __$$RecordedCoursesStateImplCopyWithImpl<$Res>
-    extends _$RecordedCoursesStateCopyWithImpl<$Res, _$RecordedCoursesStateImpl>
-    implements _$$RecordedCoursesStateImplCopyWith<$Res> {
-  __$$RecordedCoursesStateImplCopyWithImpl(_$RecordedCoursesStateImpl _value,
-      $Res Function(_$RecordedCoursesStateImpl) _then)
+class __$$RecordedCourseCategoryStateImplCopyWithImpl<$Res>
+    extends _$RecordedCourseCategoryStateCopyWithImpl<$Res,
+        _$RecordedCourseCategoryStateImpl>
+    implements _$$RecordedCourseCategoryStateImplCopyWith<$Res> {
+  __$$RecordedCourseCategoryStateImplCopyWithImpl(
+      _$RecordedCourseCategoryStateImpl _value,
+      $Res Function(_$RecordedCourseCategoryStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -298,10 +420,9 @@ class __$$RecordedCoursesStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isSubmitting = null,
     Object? courseCategory = null,
-    Object? courseData = null,
     Object? recordedCoursesFailureOrSuccessOption = null,
   }) {
-    return _then(_$RecordedCoursesStateImpl(
+    return _then(_$RecordedCourseCategoryStateImpl(
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -310,10 +431,6 @@ class __$$RecordedCoursesStateImplCopyWithImpl<$Res>
           ? _value.courseCategory
           : courseCategory // ignore: cast_nullable_to_non_nullable
               as CourseCategory,
-      courseData: null == courseData
-          ? _value.courseData
-          : courseData // ignore: cast_nullable_to_non_nullable
-              as CourseData,
       recordedCoursesFailureOrSuccessOption: null ==
               recordedCoursesFailureOrSuccessOption
           ? _value.recordedCoursesFailureOrSuccessOption
@@ -325,11 +442,11 @@ class __$$RecordedCoursesStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RecordedCoursesStateImpl implements _RecordedCoursesState {
-  const _$RecordedCoursesStateImpl(
+class _$RecordedCourseCategoryStateImpl
+    implements _RecordedCourseCategoryState {
+  const _$RecordedCourseCategoryStateImpl(
       {required this.isSubmitting,
       required this.courseCategory,
-      required this.courseData,
       required this.recordedCoursesFailureOrSuccessOption});
 
   @override
@@ -337,27 +454,23 @@ class _$RecordedCoursesStateImpl implements _RecordedCoursesState {
   @override
   final CourseCategory courseCategory;
   @override
-  final CourseData courseData;
-  @override
   final Option<Either<RecordedCourseFailures, Unit>>
       recordedCoursesFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RecordedCoursesState(isSubmitting: $isSubmitting, courseCategory: $courseCategory, courseData: $courseData, recordedCoursesFailureOrSuccessOption: $recordedCoursesFailureOrSuccessOption)';
+    return 'RecordedCourseCategoryState(isSubmitting: $isSubmitting, courseCategory: $courseCategory, recordedCoursesFailureOrSuccessOption: $recordedCoursesFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RecordedCoursesStateImpl &&
+            other is _$RecordedCourseCategoryStateImpl &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
             (identical(other.courseCategory, courseCategory) ||
                 other.courseCategory == courseCategory) &&
-            (identical(other.courseData, courseData) ||
-                other.courseData == courseData) &&
             (identical(other.recordedCoursesFailureOrSuccessOption,
                     recordedCoursesFailureOrSuccessOption) ||
                 other.recordedCoursesFailureOrSuccessOption ==
@@ -366,36 +479,34 @@ class _$RecordedCoursesStateImpl implements _RecordedCoursesState {
 
   @override
   int get hashCode => Object.hash(runtimeType, isSubmitting, courseCategory,
-      courseData, recordedCoursesFailureOrSuccessOption);
+      recordedCoursesFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RecordedCoursesStateImplCopyWith<_$RecordedCoursesStateImpl>
-      get copyWith =>
-          __$$RecordedCoursesStateImplCopyWithImpl<_$RecordedCoursesStateImpl>(
-              this, _$identity);
+  _$$RecordedCourseCategoryStateImplCopyWith<_$RecordedCourseCategoryStateImpl>
+      get copyWith => __$$RecordedCourseCategoryStateImplCopyWithImpl<
+          _$RecordedCourseCategoryStateImpl>(this, _$identity);
 }
 
-abstract class _RecordedCoursesState implements RecordedCoursesState {
-  const factory _RecordedCoursesState(
-      {required final bool isSubmitting,
-      required final CourseCategory courseCategory,
-      required final CourseData courseData,
-      required final Option<Either<RecordedCourseFailures, Unit>>
-          recordedCoursesFailureOrSuccessOption}) = _$RecordedCoursesStateImpl;
+abstract class _RecordedCourseCategoryState
+    implements RecordedCourseCategoryState {
+  const factory _RecordedCourseCategoryState(
+          {required final bool isSubmitting,
+          required final CourseCategory courseCategory,
+          required final Option<Either<RecordedCourseFailures, Unit>>
+              recordedCoursesFailureOrSuccessOption}) =
+      _$RecordedCourseCategoryStateImpl;
 
   @override
   bool get isSubmitting;
   @override
   CourseCategory get courseCategory;
   @override
-  CourseData get courseData;
-  @override
   Option<Either<RecordedCourseFailures, Unit>>
       get recordedCoursesFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
-  _$$RecordedCoursesStateImplCopyWith<_$RecordedCoursesStateImpl>
+  _$$RecordedCourseCategoryStateImplCopyWith<_$RecordedCourseCategoryStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

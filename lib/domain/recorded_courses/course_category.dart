@@ -13,6 +13,7 @@ abstract class CourseCategory implements _$CourseCategory {
   const factory CourseCategory({
     required UniqueId uniqueId,
     required CourseCategoryName categoryName,
+    
   }) = _CourseCategory;
 
   factory CourseCategory.empty() => CourseCategory(

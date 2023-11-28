@@ -72,4 +72,22 @@ class RecordedCoursesRepository implements IRecordedCoursesRepository {
       return left(RecordedCourseFailures.unexpected(failedValue: e.toString()));
     }
   }
+
+  @override
+  Future<Either<RecordedCourseFailures, Unit>> updateCategoryName({
+    required CourseCategory courseCategory,
+  }) async {
+    try {
+      final recordedCourseCollection =
+          await _firestore.recordedCourseDocument();
+      final courseCategoryDto = CourseCategoryDto.fromDomain(courseCategory);
+      await recordedCourseCollection
+          .doc(courseCategoryDto.id)
+          .update(courseCategoryDto.toJson());
+      return right(unit);
+    } on FirebaseException catch (e) {
+      log(e.toString(), name: 'RecordedCoursesRepository - isCategoryExist');
+      return left(RecordedCourseFailures.unexpected(failedValue: e.toString()));
+    }
+  }
 }

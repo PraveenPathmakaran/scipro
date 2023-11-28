@@ -10,7 +10,11 @@ abstract class IRecordedCoursesRepository {
   Future<Either<RecordedCourseFailures, Unit>> createCategory({
     required CourseCategory courseCategory,
   });
+  Future<Either<RecordedCourseFailures, Unit>> updateCategoryName({
+    required CourseCategory courseCategory,
+  });
 
-  Future<Either<RecordedCourseFailures, List<CourseCategory>>> fetchAllCategory();
+  Future<Either<RecordedCourseFailures, List<CourseCategory>>>
+      fetchAllCategory();
   Future<Either<RecordedCourseFailures, Unit>> isCategoryExist(String docId);
 }
